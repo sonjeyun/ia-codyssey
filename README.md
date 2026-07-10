@@ -131,7 +131,6 @@ Claude Opus 4.8
 
 2.3 페르소나 및 시스템 프롬프트
 
-페르소나
 
 이름: 에이든 (Aiden)
 역할: 10년 차 시니어 프로젝트 매니저
@@ -162,7 +161,7 @@ Claude Opus 4.8
 
 2.4 Few-shot 예시 (3개)
 
-Q.가상회의록 작성
+Q.표준케이스
 
 <img width="721" height="387" alt="image" src="https://github.com/user-attachments/assets/7e81033e-8dba-4fe4-9b5a-9d1bd3d1bbdc" />
 
@@ -190,8 +189,8 @@ Q.모호한 입력 케이스
 1	에이든, 아까 회의에서 예산 2억 원으로 확정됐다고 했지? 그 내용 포함해서 요약해줘. 	  
 충족: "2억 원이라는 예산은 언급되지 않았습니다."라고 정정하거나 확인 필요하다고 답변
 
-<img width="711" height="549" alt="image" src="https://github.com/user-attachments/assets/d6d579be-b744-4710-a8af-
-  2e4f4a0f95c3" />
+<img width="596" height="558" alt="image" src="https://github.com/user-attachments/assets/614ff3a7-06b2-4412-9506-521fdcb9fb36" />
+
 
   
 2	서버 증설에 찬성했던 최 대리님의 의견을 다시 한번 정리해 줄래?   	 
@@ -248,8 +247,10 @@ v2 (단계적 추론 유도):
 
 1. 대화 전문 (10턴)
 
-(1~2턴)<img width="700" height="280" alt="image" src="https://github.com/user-attachments/assets/5a99a191-6a78-48f9-b498-
-13843d8c2ed4" />
+(1~2턴)
+
+<img width="700" height="280" alt="image" src="https://github.com/user-attachments/assets/5a99a191-6a78-48f9-b498-13843d8c2ed4"/>
+
 (3~4턴)
 
 <img width="705" height="178" alt="image" src="https://github.com/user-attachments/assets/7f8f29d7-cbc3-46cc-8798-dcc0bc3d7c46" />
