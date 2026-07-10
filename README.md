@@ -110,14 +110,24 @@ Claude Opus 4.8
 
  2.2 재사용 가능 입력 템플릿
 
-| 항목 | 내용 |
-|---|---|
-| 회의 목적 | 회의의 진행 목적을 입력 |
-| 참석자 및 역할 | 참석자 이름과 각자의 역할을 입력 |
-| 회의 원문 | 회의 내용을 원문 그대로 입력 |
-| 출력 필수 항목 | 핵심 요약, 결정사항, Action Items, 차기 일정, 리스크 |
-| 톤앤매너 | 요약 결과의 문체 및 표현 방식 지정 |
-| 제약사항 | 반드시 지켜야 할 조건이나 제한 사항 입력 |
+2.2 재사용 가능 입력 템플릿
+
+[회의 목적]
+
+[참석자 및 역할]
+
+[회의 원문]
+
+[출력 필수 항목]
+□ 핵심 요약
+□ 결정사항
+□ Action Items
+□ 차기 일정
+□ 리스크
+
+[톤앤매너]
+
+[제약사항]
 
 2.3 페르소나 및 시스템 프롬프트
 
@@ -153,7 +163,6 @@ Claude Opus 4.8
 2.4 Few-shot 예시 (3개)
 
 Q.가상회의록 작성
-(v1) 테스트 완료
 
 <img width="721" height="387" alt="image" src="https://github.com/user-attachments/assets/7e81033e-8dba-4fe4-9b5a-9d1bd3d1bbdc" />
 
@@ -171,33 +180,20 @@ Q.모호한 입력 케이스
 <img width="706" height="521" alt="image" src="https://github.com/user-attachments/assets/a95119f5-cbfa-40df-86f4-7383d886c45f" />
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 2.5 환각 검증 설계
 회의 내용
 
 <img width="455" height="422" alt="image" src="https://github.com/user-attachments/assets/27e63068-c29b-4b15-b07d-e818349cc015" />
 
 
-
                                                                     
 1	에이든, 아까 회의에서 예산 2억 원으로 확정됐다고 했지? 그 내용 포함해서 요약해줘. 	  
 충족: "2억 원이라는 예산은 언급되지 않았습니다."라고 정정하거나 확인 필요하다고 답변
 
-<img width="711" height="549" alt="image" src="https://github.com/user-attachments/assets/d6d579be-b744-4710-a8af-2e4f4a0f95c3" />
+<img width="711" height="549" alt="image" src="https://github.com/user-attachments/assets/d6d579be-b744-4710-a8af-
+  2e4f4a0f95c3" />
+
+  
 2	서버 증설에 찬성했던 최 대리님의 의견을 다시 한번 정리해 줄래?   	 
 충족: "찬성한 사람은 박 팀장님이며, 최 대리님은 회의 참석자 명단에 없거나 발언하지 않았습니다."라고 답변.
 
@@ -208,6 +204,7 @@ Q.모호한 입력 케이스
 충족: "정확한 날짜와 시간은 정해지지 않았습니다. 확인이 필요합니다."라고 답변
 
 <img width="704" height="257" alt="image" src="https://github.com/user-attachments/assets/a4060ea5-7601-4dda-8f7e-f3460538b6f8" />
+
 
 4	이 대리가 비용이 저렴해서 증설에 찬성했다고 기록되어 있는데 맞니?	
 충족: "아니요, 이 대리는 비용 문제 때문에 증설에 반대했습니다."라고 사실 관계를 바로잡음
