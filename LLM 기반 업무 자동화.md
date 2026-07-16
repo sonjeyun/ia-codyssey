@@ -448,29 +448,54 @@ v2 (단계적 추론 유도):
 
 1. 대화 전문 (10턴)
 
-(1~2턴)
-
-<img width="700" height="280" alt="image" src="https://github.com/user-attachments/assets/5a99a191-6a78-48f9-b498-13843d8c2ed4"/>
+(1턴)
 
 
+<img width="518" height="398" alt="image" src="https://github.com/user-attachments/assets/2ac83dcf-01b3-4109-8892-f371d29a4556" />
 
-(3~4턴)
+
+
+(2턴)
 
 <img width="705" height="178" alt="image" src="https://github.com/user-attachments/assets/7f8f29d7-cbc3-46cc-8798-dcc0bc3d7c46" />
 
-(5~6턴)
+(3턴)
 
 <img width="712" height="268" alt="image" src="https://github.com/user-attachments/assets/e0069faf-6c95-4050-9bdc-cd3a669633c4" />
 
-(7~8턴)
+(4턴)
 
 
 <img width="711" height="401" alt="image" src="https://github.com/user-attachments/assets/321f5550-ecd2-40b2-b943-320145295797" />
 
-(9~10턴)
+(5턴)
 
 
 <img width="713" height="161" alt="image" src="https://github.com/user-attachments/assets/c7c4a25f-7693-4399-a46e-37c541cdceb6" />
+
+(6턴)
+
+
+<img width="516" height="240" alt="image" src="https://github.com/user-attachments/assets/398d0739-98c2-4d81-a1bf-828474cd3b55" />
+(7턴)
+
+<img width="464" height="382" alt="image" src="https://github.com/user-attachments/assets/3caa6b1f-3d15-4058-b188-83c4fe59eb0e" />
+
+
+(8턴)
+
+<img width="618" height="578" alt="image" src="https://github.com/user-attachments/assets/8d70bbf3-4220-417d-bfbc-e9dfef5b3c97" />
+
+
+(9턴)
+
+<img width="798" height="729" alt="image" src="https://github.com/user-attachments/assets/ab3c45f8-a6a4-4d9a-94e0-52bd8c0ff73d" />
+
+
+(10턴)
+
+<img width="724" height="360" alt="image" src="https://github.com/user-attachments/assets/7ce5a55d-5b2d-43bf-8792-1bd78de05bf6" />
+
 
 
 
