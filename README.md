@@ -25,7 +25,8 @@ AI와 직접적인 관련성이 높은 기사만 선별하여 불필요한 뉴�
 이후 **MAKE AI**를 통해 **https://www.aitimes.com/** 의 기사들을 수집하도록 워크플로우를 제작하였다. 
 
  
-![AI_TIMES](B2-2/AI_TIMES.png)
+<img width="1115" height="690" alt="image" src="https://github.com/user-attachments/assets/85b19937-ea71-48bf-8c9f-3829cc443b97" />
+
  
 
 ### 매체 선정 근거 
@@ -44,9 +45,10 @@ AI TIMES는 인공지능 분야를 전문적으로 다루는 국내 AI 전문 �
 
 ## Make AI 워크플로우 
 
- 
+<img width="1130" height="463" alt="image" src="https://github.com/user-attachments/assets/48425b25-a605-401c-a4cd-bbfc6b4b1f74" />
 
- ![Workflow](B2-2/workflow.png)
+
+
 
 RSS 모듈을 트리거로 사용하여 특정 시간에 사이트에서 기사를 수집한 후  
 
@@ -55,22 +57,28 @@ RSS 모듈을 트리거로 사용하여 특정 시간에 사이트에서 기사�
 Gemini로 요약하여 노션 데이터베이스에 기록되는 워크플로우를 작성하였다. 
  
 
-![skedule_module](B2-2/skedule.png)
+<img width="587" height="412" alt="image" src="https://github.com/user-attachments/assets/bedc25d8-6766-43c7-bb15-b6b149f05eb1" />
+
 
 
 스케줄 설정에서는 트리거 모듈이 하루마다 특정한 시간에 작동하도록 설정하였고 
 
 
- ![RSS_module](B2-2/RSS_module.png)
+
+<img width="780" height="618" alt="image" src="https://github.com/user-attachments/assets/9cd21cc4-fdf3-406e-8f64-0af077fc4439" />
+
+
 
 
 RSS 모듈에서는 최신성 있는 뉴스를 수집하는 만큼 너무 많은 정보가 수집되지 않도록  
 
 최대 3개의 뉴스를 수집하도록 설정하였고 이후 수집하는 시간이나 기사의 양을 수정할 수 있다. 
 
- 
 
- ![filter](B2-2/filter.png)
+ <img width="810" height="647" alt="image" src="https://github.com/user-attachments/assets/548afdac-c018-4598-b5dd-7c8ef2875694" />
+
+
+
 
  
 
@@ -78,22 +86,28 @@ RSS 모듈에서는 최신성 있는 뉴스를 수집하는 만큼 너무 많은
 
 수집된 기사는 라우터로 연결되며 필터 기능을 통해 제목에 “AI”가 포함된 기사들만 다음 모듈로 전송된다. 
 
- 
-![Gemini_module](B2-2/gemini_module.png)
+
+<img width="733" height="687" alt="image" src="https://github.com/user-attachments/assets/91ba64fb-86d4-4915-921d-eeb3518fe541" />
+
+
 
 Gemini 모듈에서는 프롬프트를 통해 기사의 내용을 3줄요약 하며 부가적으로  
 
 기사의 성격을 분류한다. (※ 보너스 과제) 
 
- 
-![notion_module_masking](B2-2/notion_module_masking.png)
- 
+
+ <img width="753" height="920" alt="image" src="https://github.com/user-attachments/assets/91ea8311-eb9f-4c6a-b58f-5d68aacf80c3" />
+
+
 
 노션 모듈에서 요약된 기사 내용과 기사 제목, 원문 링크 등 필요한 내용들을   
 
 미리 만들어둔 노션 데이터 베이스의 구조에 배치한다. 
 
-![retry_module](B2-2/retry_module.png)
+
+<img width="747" height="727" alt="image" src="https://github.com/user-attachments/assets/741e4523-3aed-4e14-ab82-72a1c5e39ad7" />
+
+
 
 만약 과정중 에러가 발생했을 시 Retry 모듈에서 과정을 최대 2회 재시도하며 단순 서버의  
 
@@ -125,7 +139,9 @@ Gemini 모듈에서는 프롬프트를 통해 기사의 내용을 3줄요약 하
 ## 노션 데이터베이스 
  
 
-![notion](B2-2/notion_light.png)
+<img width="1174" height="491" alt="image" src="https://github.com/user-attachments/assets/7c75b86c-592a-482a-b936-666b3082137f" />
+
+
 
 노션 데이터베이스는 **기사제목, 기사 발행 일시, 기사 요약문, 원문 링크 그리고 노션 갱신 시간**으로   
 
