@@ -162,6 +162,22 @@ https://github.com/sonjeyun/python.git
 ```
 
 
+
+커밋 10개 
+```bash
+순번 커밋 ID커밋 메시지	의미 
+1	b7147c7	Initial commit	                        프로젝트 시작  
+2	73f2f3e	remove unnecessary files	            불필요한 파일 정리 
+3	ba683f1	add gitignore	                        gitignore 추가
+4	b5f336c	Delete mkdir my-project.py	            잘못된 파일 삭제 
+5	55852d2	Delete Untitled-1.py	                임시 파일 삭제 
+6	3ad2c57	feat: AI 프롬프트 관리 프로그램 완성	    핵심 기능 완성
+7	dfedb32	docs: 목록 기능 주석 추가	            문서화 작업
+8	15e17b4	내 프로젝트에 맞게 gitignore 수정	    설정 개선 
+9	b8ceb85	feat: JSON 저장/불러오기 기능 추가	    새 기능 추가
+10	5af13be	Update README.md	                    문서 업데이트 
+```
+
 보너스 기능 (JSON 저장/불러오기) 
 ```bash
 import json 활용
