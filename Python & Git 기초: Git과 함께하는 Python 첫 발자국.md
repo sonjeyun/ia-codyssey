@@ -195,10 +195,41 @@ https://github.com/sonjeyun/python.git
 10	5af13be	Update README.md	                    문서 업데이트 
 ```
 
-보너스 기능 (JSON 저장/불러오기) 
+보너스 기능 (JSON 저장/불러오기-> md파일로 변환) 
 ```bash
 import json 활용
 프로그램 종료 후에도 데이터 유지
 save_prompts() : 프롬프트를 JSON 파일로 저장
 load_prompts() : JSON 파일에서 프롬프트 불러오기
+def export_to_markdown():
+    """프롬프트를 마크다운 파일로 내보내는 함수"""
+    show_list()
+    if not prompts:
+        return
+
+    choice = input("\n내보낼 프롬프트 번호: ").strip()
+    if not (choice.isdigit() and 1 <= int(choice) <= len(prompts)):
+        print("⚠️ 잘못된 번호입니다.")
+        return
+
+    p = prompts[int(choice) - 1]
+    category = p["category"]
+    content = f"# {p['title']}\n\n"
+    content += f"**카테고리:** {category}\n\n"
+    content += f"## 내용\n\n{p['content']}\n"
+
+    with open(f"{p['title']}.md", "w", encoding="utf-8") as f:
+        f.write(content)
+
+    print(f"✅ '{p['title']}.md' 파일로 내보냈어요!"),
+elif choice == "8":             
+            export_to_markdown()
 ```
+
+<img width="888" height="363" alt="image" src="https://github.com/user-attachments/assets/9591eea4-c84d-4856-a130-55c409104853" />
+
+
+
+<img width="883" height="391" alt="image" src="https://github.com/user-attachments/assets/39f291f7-eb20-47fa-b3a1-94da511dd96f" />
+
+
