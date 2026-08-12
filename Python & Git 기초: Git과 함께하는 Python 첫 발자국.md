@@ -57,10 +57,11 @@ git push -u origin main
 
 2-3 clone 실습
 프로그램 주요 기능
-```bash
-git clone [저장소 주소]
-git log --oneline
-```
+
+<img width="574" height="412" alt="image" src="https://github.com/user-attachments/assets/2f3afcf5-79b1-40a5-839f-080ec5c20a6d" />
+
+<img width="884" height="473" alt="image" src="https://github.com/user-attachments/assets/3634fbc3-5722-4837-a77e-fe56bf573d7b" />
+
 
 프로그램 주요 기능
 
