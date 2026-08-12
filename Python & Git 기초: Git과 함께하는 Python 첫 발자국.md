@@ -155,6 +155,12 @@ save_prompts()	JSON 저장 (보너스)
 load_prompts()	JSON 불러오기 (보너스)
 ```
 
+코드저장소
+```bash
+https://github.com/sonjeyun/python.git
+```
+
+
 보너스 기능 (JSON 저장/불러오기) 
 ```bash
 import json 활용
