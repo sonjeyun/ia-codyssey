@@ -13,7 +13,8 @@ Python과 Git을 활용하여 AI 프롬프트를 체계적으로 관리하는 CL
 - VSCode에 **Python 확장(Extension)** 설치
 - **Korean Language Pack** 설치 (한글화)
 
-<img width="306" height="150" alt="image" src="https://github.com/user-attachments/assets/3f854df3-8fec-4607-9bcc-0b5c32a127ee" />
+<img width="295" height="222" alt="image" src="https://github.com/user-attachments/assets/70fc36b4-5262-4bd4-ab6c-fd9aa6f95027" />
+
 
 
 ### 1-2. Python 환경 확인
