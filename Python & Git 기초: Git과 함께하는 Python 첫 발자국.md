@@ -180,7 +180,11 @@ https://github.com/sonjeyun/python.git
 
 
 
-커밋 10개 
+커밋 
+
+<img width="513" height="426" alt="image" src="https://github.com/user-attachments/assets/cbaecfda-d486-484f-978a-02218dac1c5c" />
+
+
 ```bash
 순번 커밋 ID커밋 메시지	의미 
 1	b7147c7	Initial commit	                        프로젝트 시작  
