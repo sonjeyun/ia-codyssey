@@ -171,6 +171,7 @@ search_prompt()	검색
 show_favorites()	즐겨찾기 조회
 save_prompts()	JSON 저장 (보너스)
 load_prompts()	JSON 불러오기 (보너스)
+export_to_markdown(보너스)
 ```
 
 코드저장소
