@@ -1,9 +1,4 @@
 ### 여행 추천 CLI 프로그램 보고서 
-
-
-
-
-
 ### 1. 프로그램 개요
 ### 1-1. 프로젝트 목적
 ```bash
@@ -13,6 +8,7 @@ LLM API를 통해 해당 날짜에 어울리는 여행지를 추천받고
 최종적으로 여행 리포트를 Markdown 파일로 저장하는 Python 프로그램을 구현하는 것을 목표로 한다.
 ```
 ### 1-2. 주요 기능
+```bash
 -argparse 기반 CLI 입력 처리
 
 -날짜 형식 검증 (YYYY-MM-DD)
@@ -26,7 +22,7 @@ LLM API를 통해 해당 날짜에 어울리는 여행지를 추천받고
 -결과 파일을 results/ 폴더에 저장
 
 -오류 발생 시 예외 처리 및 오류 요약 기록
-
+```
 
 ### 2. 최종 결과물
 본 과제에서는 다음 3가지 결과물이 포함된 프로그램 1개를 완성하였다.
@@ -151,5 +147,71 @@ url
 lng
 lat
 ```
+### 4-5. 최종 여행 리포트 생성
+```bash
+최종 리포트는 Python 코드에서 직접 Markdown 형식으로 작성하여 저장하였다.
+각 도시별로 다음 항목이 포함되도록 구성하였다.
 
+추천 도시명
+날씨
+행사 목록
+추천 이유
+1일 일정
+오전
+오후
+저녁
+맛집 리스트
+오류 요약
+예를 들어, 각 도시에 대해 다음과 같은 형식으로 Markdown이 작성된다.
+```
 
+<img width="784" height="836" alt="image" src="https://github.com/user-attachments/assets/2c3f8a80-d69a-4da0-be49-10b4ea74fd0e" />
+
+### 4-6. 에러 처리
+```bash
+본 프로그램은 예외 상황에 대비해 try-except를 활용하였다.
+
+구현된 예외 처리 내용
+API 키 미설정
+
+.env에서 키를 읽어온 뒤 누락 여부를 검사
+누락 시 즉시 종료하고 설정 방법 안내 출력
+Gemini 호출 실패
+
+최대 3회 재시도
+실패 시 오류 목록에 저장
+Gemini JSON 파싱 실패
+
+파싱 오류 메시지 출력
+None을 반환하여 이후 작업을 중단
+Kakao 맛집 검색 실패
+
+오류를 errors 리스트에 저장
+해당 도시의 맛집 정보는 빈 리스트 처리
+리포트 생성은 계속 진행
+파일 저장 실패
+
+JSON 저장 또는 Markdown 저장 실패 시 오류 목록에 추가
+마지막에는 report_errors(errors) 함수를 통해
+발생한 문제를 한 번에 출력하도록 구성하였다.
+```
+
+### 4-7. API 키 관리(보안)
+```bash
+API 키는 코드에 직접 작성하지 않고 .env 파일에서 읽어온다.
+
+load_dotenv()
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+KAKAO_API_KEY = os.getenv("KAKAO_API_KEY")
+```
+
+### 4-8. 결과 저장
+```bash
+프로그램은 실행 시 results/ 폴더가 없으면 자동으로 생성한다.
+
+os.makedirs("results", exist_ok=True)
+이후 입력한 날짜를 기준으로 다음 파일을 저장한다.
+
+results/{date}_result.json
+results/{date}_report.md
+```
