@@ -201,11 +201,11 @@ JSON 저장 또는 Markdown 저장 실패 시 오류 목록에 추가
 
 | # | 예외 상황 | 처리 방식 | 위치 (함수/키워드) |
 |---|-----------|-----------|--------------------|
-| 1 | API 키 미설정 | `exit(1)` 즉시 종료 + 안내 메시지 | `check_api_keys()` |
-| 2 | Gemini 호출 실패 | 3회 재시도 + 타임아웃 120초 후 `raise` | `for attempt in range(3)` |
-| 3 | JSON 파싱 실패 | 재요청 1회 후 `None` 반환 | `except json.JSONDecodeError` |
-| 4 | Kakao 맛집 검색 실패 | 빈 리스트 대체 후 다음 도시 진행 | `except` → `places = []` |
-| 5 | 파일 저장 실패 | `errors.append()`로 기록 후 계속 | JSON/MD 저장 `except` |
+| 1 | API 키 미설정 | `exit(1)` 즉시 종료 + 안내 메시지 | `check_api_keys()`(16) |
+| 2 | Gemini 호출 실패 | 3회 재시도 + 타임아웃 120초 후 `raise` | `for attempt in range(3)` (91)|
+| 3 | JSON 파싱 실패 | 재요청 1회 후 `None` 반환 | `except json.JSONDecodeError` (107)|
+| 4 | Kakao 맛집 검색 실패 | 빈 리스트 대체 후 다음 도시 진행 | `except` → `places = []`(218-2803) |
+| 5 | 파일 저장 실패 | `errors.append()`로 기록 후 계속 | JSON/MD 저장 `except` (247-252),(257-297)|
 
 
 ### 4-7. API 키 관리(보안)
