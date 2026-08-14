@@ -208,9 +208,6 @@ JSON 저장 또는 Markdown 저장 실패 시 오류 목록에 추가
 | 5 | 파일 저장 실패 | `errors.append()`로 기록 후 계속 | JSON/MD 저장 `except` |
 
 
-
-<img width="425" height="139" alt="image" src="https://github.com/user-attachments/assets/d01d4ad5-6997-4d7c-927b-b37b97e78505" />
-
 ### 4-7. API 키 관리(보안)
 ```bash
 API 키는 코드에 직접 작성하지 않고 .env 파일에서 읽어온다.
