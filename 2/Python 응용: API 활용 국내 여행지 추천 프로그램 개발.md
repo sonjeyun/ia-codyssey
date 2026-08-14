@@ -49,36 +49,107 @@ results/
 
 ### 3-1. REST API와 HTTP 메서드 이해
 ```bash
-REST API는 클라이언트와 서버가 HTTP를 통해 데이터를 주고받는 방식이다.
-대표적으로 GET은 데이터를 조회할 때 사용하고, POST는 데이터를 생성하거나 요청 본문을 포함해 서버에 전달할 때 사용한다.
+REST API는 클라이언트가 서버에 요청을 보내고, 서버가 응답을 반환하는 방식으로 동작한다.
+장소 검색 API는 주로 GET 요청을 통해 데이터를 조회하며,
+응답은 JSON 형식으로 전달된다.
+본 프로그램에서는 Kakao Local API에 GET 요청을 보내 도시별 맛집 정보를 검색하였다.
 
-예를 들어,
-
-장소 검색 API는 특정 지역의 맛집 정보를 가져오기 위해 주로 GET 요청을 사용한다.
-LLM API는 프롬프트를 전달하고 응답을 생성받기 위해 POST 요청을 사용하는 경우가 많다.
-3-2. LLM 출력의 구조화(JSON)
-LLM의 자연어 응답은 바로 다음 단계에서 사용하기 어렵기 때문에,
-반드시 JSON 형식으로 출력되도록 프롬프트를 설계하였다.
-이렇게 생성된 JSON에서 recommended_city 값을 추출하여
-지도/장소 검색 API의 입력값으로 활용하였다.
+LLM API는 프롬프트를 전달하고 응답을 생성받는 방식으로 사용되며,
+본 코드에서는 Gemini 라이브러리를 통해 여행 추천 정보를 생성하였다.
+```
+### 3-2. LLM 출력의 구조화(JSON)
+```bash
+본 프로그램은 Gemini에게 자유로운 문장이 아니라
+반드시 JSON 형식으로만 응답하도록 프롬프트를 설계하였다.
+이를 통해 recommended_cities 배열 안의 도시명, 날씨, 행사, 추천 이유, 일정 정보를 구조적으로 추출할 수 있었다.
+이후 각 도시명을 Kakao 장소 검색 API의 입력값으로 사용하여 다음 단계로 연결하였다.
 ```
 ### 3-3. 외부 API 오류와 대응
 ```bash
-외부 API 호출 시 다음과 같은 오류가 발생할 수 있다.
-
-인증 오류: API 키 누락 또는 잘못된 키
-쿼터 초과: 사용량 제한 초과
-네트워크 오류: 요청 실패, timeout
-파싱 오류: JSON 형식 불일치
-이에 대해 try-except를 사용하여 예외를 처리하고,
-오류가 발생해도 프로그램이 완전히 중단되지 않도록 설계하였다.
+외부 API를 호출할 때는 인증 오류, 네트워크 오류, 응답 지연, JSON 파싱 오류 등이 발생할 수 있다.
+본 프로그램에서는 try-except를 사용하여 예외를 처리하였고,
+오류가 발생하면 errors 리스트에 저장한 뒤 마지막에 요약하여 출력하도록 하였다.
+또한 Gemini 호출 실패 시 최대 3회까지 재시도하도록 구현하였다.
 ```
 ### 3-4. API 키를 환경변수로 관리하는 이유
 ```bash
-API 키를 코드에 직접 작성하면 GitHub 업로드나 제출 과정에서 키가 노출될 위험이 있다.
-따라서 .env 파일 또는 환경변수를 사용하여 키를 안전하게 관리하였다.
+API 키를 코드에 직접 작성하면 키가 외부에 노출될 위험이 있다.
+따라서 본 프로그램은 .env 파일과 python-dotenv를 사용하여
+GEMINI_API_KEY, KAKAO_API_KEY를 안전하게 불러오도록 구현하였다.
+이 방식은 보안에 유리하고, 다른 환경에서도 쉽게 설정을 바꿀 수 있다는 장점이 있다.
+```
+### 4-1. CLI 인터페이스
+```bash
+argparse를 사용하여 CLI 입력을 처리하였다.
+
+필수 옵션: -date
+형식 검증: YYYY-MM-DD
+datetime.strptime()를 이용해 날짜 형식을 검증잘못된 입력 시 사용법 출력 후 종료
+예시 설명
+사용자가 날짜를 잘못 입력하면 프로그램은 예외를 발생시키는 대신,
+올바른 형식을 안내하고 종료하도록 구현하였다.
 ```
 
+<img width="656" height="210" alt="image" src="https://github.com/user-attachments/assets/5cefb175-c092-49b2-afb0-bf48596a0e38" />
 
+### 4-2. API 
+```bash
+LLM|Google AI Studio | Gemini API
+지도|Kakao Developers| kakao local API
+Gemini는 프롬프트 기반으로 구조화된 JSON 응답을 생성하는 데 적합하며,
+Kakao Local API는 국내 도시 이름을 기반으로 맛집 검색을 수행할 수 있어 과제 목적에 적합하다.
+```
+### 4-3. LLM API 연동 - 날씨/행사 정보 생성
+```bash
+사용자가 입력한 날짜를 바탕으로 Gemini에 프롬프트를 보내
+여행하기 좋은 한국의 도시 3곳을 추천받도록 구현하였다.
+
+프롬프트에서는 반드시 아래와 같은 JSON 형식으로만 응답하도록 요구하였다.
+
+{
+  "recommended_cities": [
+    {
+      "city": "도시명1",
+      "weather": "해당 시기 날씨 요약",
+      "events": ["행사1", "행사2"],
+      "reason": "추천 이유 2~4문장",
+      "itinerary": {
+        "morning": "오전 일정",
+        "afternoon": "오후 일정",
+        "evening": "저녁 일정"
+      }
+    }
+  ]
+}
+또한 응답 실패에 대비해 Gemini 호출은 최대 3회까지 재시도하도록 하였다.
+for attempt in range(3):
+    try:
+        response = model.generate_content(
+            prompt,
+            request_options={"timeout": 120}
+        )
+        break
+    except Exception as e:
+        ...
+응답에서 코드블록 표시가 포함될 수 있으므로,
+```json, ```를 제거한 뒤 json.loads()로 파싱하였다.
+```
+### 4-4. 지도/장소 검색 API 연동 - 맛집 검색
+```bash
+
+Gemini가 추천한 각 도시의 이름을 이용하여
+Kakao Local API에 "도시명 맛집" 키워드로 검색 요청을 보냈다.
+
+params = {"query": f"{city} 맛집", "size": 5}
+res = requests.get(url, headers=headers, params=params)
+검색 결과에서 다음 정보를 추출하였다.
+
+place_name
+address
+category
+url
+lng
+lat
+```
 
 
