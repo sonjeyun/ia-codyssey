@@ -220,7 +220,8 @@ KAKAO_API_KEY = os.getenv("KAKAO_API_KEY")
 ### 4-8. 결과 저장
 
 
-<img width="589" height="387" alt="스크린샷 2026-08-14 134936" src="https://github.com/user-attachments/assets/ca6f8c8b-f08f-4ec1-886e-23e18a2eeb6c" />
+<img width="585" height="853" alt="스크린샷 2026-08-14 141149" src="https://github.com/user-attachments/assets/fdb850fb-3bb4-4d4d-a9c5-a45abb332854" />
+
 
 
 
