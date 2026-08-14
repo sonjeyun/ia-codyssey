@@ -171,30 +171,45 @@ lat
 ```bash
 본 프로그램은 예외 상황에 대비해 try-except를 활용하였다.
 
-구현된 예외 처리 내용
+1.구현된 예외 처리 내용
 API 키 미설정
-
 .env에서 키를 읽어온 뒤 누락 여부를 검사
 누락 시 즉시 종료하고 설정 방법 안내 출력
-Gemini 호출 실패
 
+2.Gemini 호출 실패
 최대 3회 재시도
 실패 시 오류 목록에 저장
-Gemini JSON 파싱 실패
 
+3.Gemini JSON 파싱 실패
 파싱 오류 메시지 출력
 None을 반환하여 이후 작업을 중단
-Kakao 맛집 검색 실패
 
+4.Kakao 맛집 검색 실패
 오류를 errors 리스트에 저장
 해당 도시의 맛집 정보는 빈 리스트 처리
-리포트 생성은 계속 진행
+
+
+5.리포트 생성은 계속 진행
 파일 저장 실패
 
 JSON 저장 또는 Markdown 저장 실패 시 오류 목록에 추가
 마지막에는 report_errors(errors) 함수를 통해
 발생한 문제를 한 번에 출력하도록 구성하였다.
 ```
+
+예외처리 5단계 최종 위치 정리표
+
+| # | 예외 상황 | 처리 방식 | 위치 (함수/키워드) |
+|---|-----------|-----------|--------------------|
+| 1 | API 키 미설정 | `exit(1)` 즉시 종료 + 안내 메시지 | `check_api_keys()` |
+| 2 | Gemini 호출 실패 | 3회 재시도 + 타임아웃 120초 후 `raise` | `for attempt in range(3)` |
+| 3 | JSON 파싱 실패 | 재요청 1회 후 `None` 반환 | `except json.JSONDecodeError` |
+| 4 | Kakao 맛집 검색 실패 | 빈 리스트 대체 후 다음 도시 진행 | `except` → `places = []` |
+| 5 | 파일 저장 실패 | `errors.append()`로 기록 후 계속 | JSON/MD 저장 `except` |
+
+
+
+<img width="425" height="139" alt="image" src="https://github.com/user-attachments/assets/d01d4ad5-6997-4d7c-927b-b37b97e78505" />
 
 ### 4-7. API 키 관리(보안)
 ```bash
@@ -206,11 +221,18 @@ KAKAO_API_KEY = os.getenv("KAKAO_API_KEY")
 ```
 
 ### 4-8. 결과 저장
+
+
+<img width="425" height="139" alt="image" src="https://github.com/user-attachments/assets/d1a6db82-98ed-47a7-8223-73d270d56c8e" />
+
+
 ```bash
 프로그램은 실행 시 results/ 폴더가 없으면 자동으로 생성한다.
 
 os.makedirs("results", exist_ok=True)
-이후 입력한 날짜를 기준으로 다음 파일을 저장한다.
+이후 입력한 날짜를 기준으로 다음 파일을 저장한다.!
+
+
 
 results/{date}_result.json
 results/{date}_report.md
