@@ -32,5 +32,10 @@ LLM API를 통해 해당 날짜에 어울리는 여행지를 추천받고
 출력 내용:
 진행 로그 출력
 결과 저장 경로 안내
+results/
+ ├─ 2025-03-15_result.json
+ └─ 2025-03-15_report.md
 ```
+
+<img width="585" height="853" alt="스크린샷 2026-08-14 141149" src="https://github.com/user-attachments/assets/84e9573f-9f97-4ad5-a227-874ef6271c45" />
 
