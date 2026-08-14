@@ -79,10 +79,6 @@ git push -u origin main
 
 ```bash
 def show_menu():
-    """메뉴를 출력하는 함수"""
-    print("\n" + "=" * 40)
-    print("      AI 프롬프트 관리 프로그램")
-    print("=" * 40)
     print("1. 프롬프트 추가")
     print("2. 프롬프트 목록 보기")
     print("3. 카테고리별 조회")
