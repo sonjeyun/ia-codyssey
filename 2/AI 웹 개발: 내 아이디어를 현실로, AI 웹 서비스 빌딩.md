@@ -19,8 +19,9 @@
 - **배포:** Vercel
 
 ##  배포 URL
+```bash
 recipe-app-g4zi.vercel.app
-
+```
 ## 구조
 
 
