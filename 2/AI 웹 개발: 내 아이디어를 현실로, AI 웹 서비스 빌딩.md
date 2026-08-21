@@ -25,5 +25,18 @@ recipe-app-g4zi.vercel.app
 ## 구조
 
 
-<img width="159" height="471" alt="image" src="https://github.com/user-attachments/assets/a5083917-4c36-405c-86a5-d5a7e1304b57" />
+<img width="432" height="599" alt="image" src="https://github.com/user-attachments/assets/97d4d025-2186-484a-882c-e9309ab6c0d8" />
 
+
+##  환경 변수 
+| 변수명 | 설명 |
+|--------|------|
+| GEMINI_API_KEY | Google Gemini API 키 
+
+
+### ai 실패
+
+```bash
+API 오류(4xx/5xx)->😢 오류가 발생했어요. 다시 시도해주세요!
+지연/타임아웃(응답이 늦을 때)->🍳 레시피를 만들고 있어요... 잠깐만요!
+```
