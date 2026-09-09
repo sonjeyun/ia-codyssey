@@ -85,16 +85,10 @@ statsmodels==0.14.5
 
 | 그래프 | 파일 |
 |--------|------|
-| Q1. 월별 계절 패턴 | <img width="771" height="594" alt="image" src="https://github.com/user-attachments/assets/b4fc2d02-4aa5-4b2d-813e-fdd65d68fb34" />
- |
-| Q2. 여름 기온 추세 | <img width="819" height="625" alt="image" src="https://github.com/user-attachments/assets/97d19d8a-264f-41ef-8316-d889657cb2ab" />
-
- |
-| Q3. 일교차 변화 | <img width="794" height="686" alt="image" src="https://github.com/user-attachments/assets/bad90639-24d0-47f4-b01e-7c7b879f5278" />
-
- |
-| 보너스. 시계열 분해 |<img width="827" height="532" alt="image" src="https://github.com/user-attachments/assets/4ccbc53f-86e3-4cfc-853d-120543d51fef" />
- |
+| Q1. 월별 계절 패턴 | <img width="771" height="594" alt="image" src="https://github.com/user-attachments/assets/b4fc2d02-4aa5-4b2d-813e-fdd65d68fb34" />|
+| Q2. 여름 기온 추세 | <img width="819" height="625" alt="image" src="https://github.com/user-attachments/assets/97d19d8a-264f-41ef-8316-d889657cb2ab" />|
+| Q3. 일교차 변화 | <img width="794" height="686" alt="image" src="https://github.com/user-attachments/assets/bad90639-24d0-47f4-b01e-7c7b879f5278" /> |
+| 보너스. 시계열 분해 |<img width="827" height="532" alt="image" src="https://github.com/user-attachments/assets/4ccbc53f-86e3-4cfc-853d-120543d51fef" /> |
 
 ---
 
@@ -128,6 +122,6 @@ statsmodels==0.14.5
 - 시계열 분해로 계절성 제거 후에도 장기 상승 추세가 확인됨.
 
 ### 한계 및 주의사항
-- 각 연도 1~8월 데이터만 존재 → 9~12월 미포함으로 **완전한 연주기 분석에 제약**.
+- 9~12월 미포함으로   **완전한 연주기 분석에 제약**.
 - 추세 상승의 원인(온난화 vs 도시화)은 본 분석만으로 **단정 불가**.
 - 17년(회귀 기준)은 기후 추세로는 짧아 통계적 유의성 검증이 추가로 필요.
