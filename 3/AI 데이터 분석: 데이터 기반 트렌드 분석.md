@@ -89,15 +89,13 @@ statsmodels==0.14.5
 | Q2. 여름 기온 추세 | <img width="819" height="625" alt="image" src="https://github.com/user-attachments/assets/97d19d8a-264f-41ef-8316-d889657cb2ab" />|
 | Q3. 일교차 변화 | <img width="794" height="686" alt="image" src="https://github.com/user-attachments/assets/bad90639-24d0-47f4-b01e-7c7b879f5278" /> |
 | 보너스. 시계열 분해 |<img width="827" height="532" alt="image" src="https://github.com/user-attachments/assets/4ccbc53f-86e3-4cfc-853d-120543d51fef" /> 
+|
 
 "한 사람의 키" 비유 
 
 Trend = 나이 들며 자라는 성장 (장기 흐름)
 Seasonal = 아침엔 크고 저녁엔 줄어드는 하루 변화 (반복)
 Resid = 그날그날 측정 오차 (나머지)
-
-
-|
 
 ---
 
